@@ -10,7 +10,6 @@ services:
     environment:
         - ASPNETCORE_ENVIRONMENT=Development
 
-# workaround to local dev machine which cannot create new virtual network adapter's
 networks:
   default:
     external:
