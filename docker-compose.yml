@@ -3,7 +3,7 @@ version: '3.4'
 services:
 
   web-app:
-    image: christianacca/aspnetcoreapp-simple-sample:${VERSION:-latest}
+    image: christianacca/aspnetcoreapp-netfx-sample:${VERSION:-latest}
     build:
         context: src
         dockerfile: Demo.API/Dockerfile
