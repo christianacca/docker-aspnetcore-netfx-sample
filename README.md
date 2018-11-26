@@ -6,19 +6,19 @@ This sample requires [Docker 17.06](https://docs.docker.com/release-notes/docker
 
 ## Try a pre-built ASP.NET Docker Image
 
-You can quickly run a container with a pre-built [sample ASP.NET Core Docker image](https://hub.docker.com/r/christianacca/aspnetappcore-simple-sample/).
+You can quickly run a container with a pre-built [sample ASP.NET Core Docker image](https://hub.docker.com/r/christianacca/aspnetcoreapp-simple-sample/).
 
 1. Download / browse to directory containing [docker-compose.yml](docker-compose.yml)
 2. Open a powershell prompt in the directory containing the `docker-compose.yml`
-3. In the same powershell prompt run: `docker-compose -p aspnetcore-sample up -d`
+3. In the same powershell prompt run: `docker-compose up -d`
 
 To browse to the home page of the web app now running in a container:
-1. Get the IP address of the container `docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' (docker ps -f name=aspnetcore-sample_web-app_1 -q)`
+1. Get the IP address of the container `docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' (docker ps -f name=docker-aspnetcore-simple-sample_web-app_1 -q)`
 2. Open a browser and navigate to the IP address
 
 To cleanup:
 
-* `docker-compose -p aspnetcore-sample down`
+* `docker-compose down`
 
 
 ## Getting the sample
@@ -37,6 +37,6 @@ You can build and run the sample in Docker using the following commands. The ins
 .\build.ps1 Build, UpDev
 ```
 The above command ultimately:
-1. builds a new image `christianacca/aspnetappcore-simple-sample` from code in the `src/` directory
+1. builds a new image `christianacca/aspnetcoreapp-simple-sample` from code in the `src/` directory
 2. uses `docker-compose up` to start the web app and it's associated database inside containers
 3. open a browser window (chrome) and navigates to the home page of the web app
