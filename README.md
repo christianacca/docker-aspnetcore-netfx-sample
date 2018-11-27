@@ -1,4 +1,4 @@
-# ASP.NET Core MVC Docker targeting full .net framework
+# Docker with ASP.NET Core MVC targeting full .net framework
 
 This sample demonstrates using **ASP.NET Core MVC targeting full .net framework** and deploying this to Docker
 
