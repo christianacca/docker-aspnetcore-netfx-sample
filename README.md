@@ -2,19 +2,15 @@
 
 This sample demonstrates using **ASP.NET Core MVC targeting full .net framework** and deploying this to Docker
 
-This sample requires [Docker 17.06](https://docs.docker.com/release-notes/docker-ce) or later of the [Docker client](https://store.docker.com/editions/community/docker-ce-desktop-windows).
+This sample requires [Docker 18.09](https://docs.docker.com/release-notes/docker-ce) or later of the [Docker client](https://store.docker.com/editions/community/docker-ce-desktop-windows).
 
 ## Try a pre-built ASP.NET Docker Image
 
 You can quickly run a container with a pre-built [sample ASP.NET Core Docker image](https://hub.docker.com/r/christianacca/aspnetcoreapp-netfx-sample/).
  
 1. Start the container:
-    * `docker run --rm --name api -it -e "ASPNETCORE_ENVIRONMENT=Development" christianacca/aspnetcoreapp-netfx-sample`
-2. Open another *powershell* prompt
-3. Get the IP address of the container (in another *powershell* prompt):
-    * `$ip = docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' api`
-4. Browse to the api endpoint:
-    * `start "http://$ip/api/values"`
+    * `docker run --rm --name api -p 8080:80 -it -e christianacca/aspnetcoreapp-netfx-sample`
+2. Browse to the api endpoint at: http://localhost:8080/api/values
 
 To cleanup:
 
@@ -30,10 +26,7 @@ You can build and run the sample in Docker using the following commands. The ins
 2. Open a powershel prompt and change directory to the folder containing `docker-compose.yml` file
 3. Build and start the container:
     * `docker-compose up -d --build`
-4. Get the IP address of the container:
-    * `$ip = docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' (docker ps -f name=docker-aspnetcore-netfx-sample_web-app_1 -q)`
-5. Browse to the api endpoint:
-    * `start "http://$ip/api/values"`
+4. Browse to the api endpoint at: http://localhost:8080/api/values
 
 To cleanup:
 

@@ -6,9 +6,11 @@ services:
     image: christianacca/aspnetcoreapp-netfx-sample:${VERSION:-latest}
     build:
         context: src
-        dockerfile: Demo.API/Dockerfile
+        dockerfile: MRI.DataGateway.Horizon.TokenProvider/Dockerfile
     environment:
         - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8080:80"
 
 networks:
   default:
